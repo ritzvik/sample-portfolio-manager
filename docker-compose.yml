@@ -25,9 +25,9 @@ services:
     build: .
     volumes:
       - ./:/code_service
-    entrypoint: python manage.py runserver 0.0.0.0:3012
+    entrypoint: python manage.py runserver 0.0.0.0:8000
     ports:
-      - "3012:3012"
+      - "3012:8000"
     depends_on:
       - db
       - code_service_migration

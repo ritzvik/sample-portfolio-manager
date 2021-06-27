@@ -1,8 +1,8 @@
 databases:
-  DB_NAME: 'code2' # 'db0'
+  DB_NAME: 'code'
   DB_USER: 'pg'
   DB_PASSWORD: 'password'
-  DB_HOST: 'localhost'
+  DB_HOST: 'db'
   DB_PORT: '5432'
   CONN_AGE: 60
 

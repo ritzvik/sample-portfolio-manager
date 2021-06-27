@@ -8,7 +8,7 @@ from code_service.constants.stashaway_constants import DepositTypes
 from code_service.libs.response import send_200, send_400
 from code_service.utils.datetime_utils import get_present_datetime_in_utc
 from stashaway.models import Portfolio, MonthlyRecurringDepositSchedule, Deposit
-from code_service.validators import csv_uuid_validator, uuid_validator
+from code_service.validators import uuid_validator
 
 
 class GetDepositDetailsSerializer(Serializer):

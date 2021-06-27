@@ -27,6 +27,7 @@ class GetPortfolioSerializer(Serializer):
         portfolios = portfolios.annotate(
             deposit_amount=Subquery(
                 Deposit.objects.filter(portfolio_id=OuterRef("id"))
+                .values("portfolio_id")
                 .annotate(amount_total=Sum("amount"))
                 .values("amount_total")[:1]
             )
