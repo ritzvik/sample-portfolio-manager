@@ -1,0 +1,16 @@
+databases:
+  DB_NAME: 'code2' # 'db0'
+  DB_USER: 'pg'
+  DB_PASSWORD: 'password'
+  DB_HOST: 'localhost'
+  DB_PORT: '5432'
+  CONN_AGE: 60
+
+
+ENVIRONMENT: 'local_rit'
+
+DEBUG: True
+
+# APP SECRETS
+
+DJANGO_SECRET_KEY: 'znu@df2u!hvqe+03psfp-u11rs8e91$)h0)zb+1i^=z_@83rm='

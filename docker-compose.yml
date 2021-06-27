@@ -1,0 +1,36 @@
+version: '3.9'
+
+services:
+  db:
+    image: postgres:12
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: password
+      POSTGRES_USER: pg
+      POSTGRES_DB: code
+    ports:
+      - "5440:5432"
+    volumes:
+      - postgres_data:/tmp/pgdata
+
+  code_service_migration:
+    build: .
+    volumes:
+      - ./:/code_service
+    entrypoint: python manage.py migrate
+    depends_on:
+      - db
+
+  code_service:
+    build: .
+    volumes:
+      - ./:/code_service
+    entrypoint: python manage.py runserver 0.0.0.0:3012
+    ports:
+      - "3012:3012"
+    depends_on:
+      - db
+      - code_service_migration
+
+volumes:
+  postgres_data:
